@@ -8,8 +8,6 @@ import numpy
 import Orange
 import matplotlib.pyplot as plt
 
-
-
 def leer_nombre_csv(msg):
     """ Sirve para leer el nombre del fichero CSV """
     nombre = input(msg)
@@ -103,6 +101,7 @@ while nombre_fichero.lower() != 'quit.csv':
     cd = Orange.evaluation.compute_CD(ranking_medio,
                                       num_conjuntos,
                                       alpha=alpha_value, test='nemenyi')
+    print('Critical Distance: %f' % cd)
     Orange.evaluation.graph_ranks(ranking_medio, sistemas,
                                   cd=cd, width=6, textspace=1.5)
 
